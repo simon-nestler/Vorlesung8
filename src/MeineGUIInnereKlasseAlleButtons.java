@@ -25,13 +25,15 @@ public class MeineGUIInnereKlasseAlleButtons {
         panel.add(button3);
         panel.add(label);
 
-        button1.addActionListener(new meinActionListener());
+        button1.addActionListener(new meinActionListener1());
+        button2.addActionListener(new meinActionListener2());
+        button3.addActionListener(new meinActionListener3());
 
         jframe.setSize(400, 300);
         jframe.setVisible(true);
     }
 
-    private class meinActionListener implements ActionListener {
+    private class meinActionListener1 implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -39,4 +41,19 @@ public class MeineGUIInnereKlasseAlleButtons {
         }
     }
 
+    private class meinActionListener2 implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            label.setText("Button 2");
+        }
+    }
+
+    private class meinActionListener3 implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            label.setText("Button 3");
+        }
+    }
 }
