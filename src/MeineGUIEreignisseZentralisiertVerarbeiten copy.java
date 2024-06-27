@@ -5,7 +5,7 @@ import javax.swing.JPanel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MeineGUIEreignisseZentralisiertVerarbeiten {
+public class MeineGUIEreignisseZentralisiertVerarbeiten implements ActionListener {
     private JLabel label;
     private JButton button1, button2, button3;
 
@@ -26,25 +26,22 @@ public class MeineGUIEreignisseZentralisiertVerarbeiten {
         panel.add(button3);
         panel.add(label);
 
-        button1.addActionListener(new meinActionListener());
-        button2.addActionListener(new meinActionListener());
-        button3.addActionListener(new meinActionListener());
+        button1.addActionListener(this);
+        button2.addActionListener(this);
+        button3.addActionListener(this);
 
         jframe.setSize(400, 300);
         jframe.setVisible(true);
     }
 
-    private class meinActionListener implements ActionListener {
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            if (e.getSource().equals(button1)) {
-                label.setText("Button 1");
-            } else if (e.getSource().equals(button2)) {
-                label.setText("Button 2");
-            } else if (e.getSource().equals(button3)) {
-                label.setText("Button 3");
-            }
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource().equals(button1)) {
+            label.setText("Button 1");
+        } else if (e.getSource().equals(button2)) {
+            label.setText("Button 2");
+        } else if (e.getSource().equals(button3)) {
+            label.setText("Button 3");
         }
     }
 
